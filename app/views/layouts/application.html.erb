@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleApp3</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,5 +10,18 @@
 
 <%= yield %>
 
+<%= link_to 'Home', home_path %> | 
+<%= link_to 'Help', help_path %> | 
+<%= link_to 'About', about_path %> | 
+<%= link_to 'Contact', contact_path %>
+
+<br>
+<br>
+<hr>
+<div class="debug">
+	<%= debug(params) %>
+</div>
+
 </body>
 </html>
+
